@@ -2,6 +2,27 @@
   "version": 3,
   "targets": {
     "net7.0": {
+      "BetterConsoles.Colors/1.1.1": {
+        "type": "package",
+        "dependencies": {
+          "BetterConsoles.Core": "1.2.0"
+        },
+        "compile": {
+          "lib/net5.0/BetterConsoles.Colors.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/BetterConsoles.Colors.dll": {}
+        }
+      },
+      "BetterConsoles.Core/1.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/BetterConsoles.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/BetterConsoles.Core.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.OpenApi/7.0.11": {
         "type": "package",
         "dependencies": {
@@ -111,6 +132,38 @@
     }
   },
   "libraries": {
+    "BetterConsoles.Colors/1.1.1": {
+      "sha512": "qcQf4XeAkmfmeT+rUySvbZ2mSDHHSC97g4BZl1p6HP3q8/jQGKEIZO1CVvCOv+MV/twOfdgh1O7IXgePr1zhFw==",
+      "type": "package",
+      "path": "betterconsoles.colors/1.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "betterconsoles.colors.1.1.1.nupkg.sha512",
+        "betterconsoles.colors.nuspec",
+        "lib/net471/BetterConsoles.Colors.dll",
+        "lib/net5.0/BetterConsoles.Colors.dll",
+        "lib/netcoreapp2.1/BetterConsoles.Colors.dll",
+        "lib/netcoreapp3.1/BetterConsoles.Colors.dll",
+        "lib/netstandard2.0/BetterConsoles.Colors.dll"
+      ]
+    },
+    "BetterConsoles.Core/1.2.0": {
+      "sha512": "JttvGkrAt+YkKVe8sMGxF6R94mCA+Icln07b79sClQRBCa8Uj89ll36EZZUrivFuYObR9ExKdUAidfdkYrQMJQ==",
+      "type": "package",
+      "path": "betterconsoles.core/1.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "betterconsoles.core.1.2.0.nupkg.sha512",
+        "betterconsoles.core.nuspec",
+        "lib/net471/BetterConsoles.Core.dll",
+        "lib/net5.0/BetterConsoles.Core.dll",
+        "lib/netcoreapp2.1/BetterConsoles.Core.dll",
+        "lib/netcoreapp3.1/BetterConsoles.Core.dll",
+        "lib/netstandard2.0/BetterConsoles.Core.dll"
+      ]
+    },
     "Microsoft.AspNetCore.OpenApi/7.0.11": {
       "sha512": "+3PUTx950QiUzw9CriQfCpfv11cJ0uMzQrDS3BwkEDlRduAh/2+1mxDy2S8wS1j3zyQpjbtQU0fFeWTU8j0Ljg==",
       "type": "package",
@@ -464,6 +517,7 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "BetterConsoles.Colors >= 1.1.1",
       "Microsoft.AspNetCore.OpenApi >= 7.0.11",
       "Swashbuckle.AspNetCore >= 6.5.0"
     ]
@@ -507,6 +561,10 @@
       "net7.0": {
         "targetAlias": "net7.0",
         "dependencies": {
+          "BetterConsoles.Colors": {
+            "target": "Package",
+            "version": "[1.1.1, )"
+          },
           "Microsoft.AspNetCore.OpenApi": {
             "target": "Package",
             "version": "[7.0.11, )"

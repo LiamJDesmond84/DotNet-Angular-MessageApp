@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "kN2zdPSj6/QEHcyThkFjpHupu5EDSpSyvxE5/YT7ih+3gg7+X9M7e/YWga1oLjmPgpP/dC449JURQ33j0V/hiw==",
+  "dgSpecHash": "bgOznv7dnQpmk+Y9TqGJdpWVvCggoENixQyme2qjo+aiqOcXkuvP6J9Jimz/NMiBLjoMJC2tE8cYrrkXOQNM5Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\liamj\\Documents\\GitRepos\\DotNet-Angular-MessageApp\\API\\API.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\liamj\\.nuget\\packages\\betterconsoles.colors\\1.1.1\\betterconsoles.colors.1.1.1.nupkg.sha512",
+    "C:\\Users\\liamj\\.nuget\\packages\\betterconsoles.core\\1.2.0\\betterconsoles.core.1.2.0.nupkg.sha512",
     "C:\\Users\\liamj\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.11\\microsoft.aspnetcore.openapi.7.0.11.nupkg.sha512",
     "C:\\Users\\liamj\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\liamj\\.nuget\\packages\\microsoft.openapi\\1.4.3\\microsoft.openapi.1.4.3.nupkg.sha512",
