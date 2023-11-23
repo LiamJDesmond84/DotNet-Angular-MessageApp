@@ -7,11 +7,11 @@ namespace API.Controllers
     [Route("api/[controller]")]
     public class UsersController : ControllerBase
     {
-        private readonly DataContext context;
+        private readonly DataContext _context;
 
         public UsersController(DataContext context)
         {
-            this.context = context;
+            _context = context;
         }
 
     }
