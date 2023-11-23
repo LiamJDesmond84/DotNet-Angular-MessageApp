@@ -1,4 +1,5 @@
 ﻿using API.Data;
+using API.Entities;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
@@ -14,5 +15,13 @@ namespace API.Controllers
             _context = context;
         }
 
+
+        [HttpGet]
+        public ActionResult<IEnumerable<AppUser>> getUsers() 
+        {
+            var users = _context.Users.ToList();
+
+            return users;
+        }
     }
 }
