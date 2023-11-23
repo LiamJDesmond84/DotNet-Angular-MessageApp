@@ -23,5 +23,13 @@ namespace API.Controllers
 
             return users;
         }
+
+        [HttpGet("{id}")]
+        public ActionResult<AppUser> getUsersById(int id)
+        {
+            var user = _context.Users.FirstOrDefault();
+
+            return user;
+        }
     }
 }
