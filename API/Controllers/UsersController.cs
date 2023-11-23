@@ -25,9 +25,9 @@ namespace API.Controllers
         }
 
         [HttpGet("{id}")]
-        public ActionResult<AppUser> getUsersById(int id)
+        public ActionResult<AppUser> getUser(int id)
         {
-            var user = _context.Users.FirstOrDefault();
+            var user = _context.Users.Find(id);
 
             return user;
         }
