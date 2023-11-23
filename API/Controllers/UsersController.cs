@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using API.Data;
+using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
@@ -6,5 +7,12 @@ namespace API.Controllers
     [Route("api/[controller]")]
     public class UsersController : ControllerBase
     {
+        private readonly DataContext context;
+
+        public UsersController(DataContext context)
+        {
+            this.context = context;
+        }
+
     }
 }
