@@ -1,6 +1,7 @@
 ﻿using API.Data;
 using API.Entities;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -31,6 +32,13 @@ namespace API.Controllers
             await _context.SaveChangesAsync();
 
             return Ok(user);
+
+        }
+
+        private async Task<bool> UserExists(string username)
+        {
+
+            return await _context.Users.AnyAsync(x => x.UserName == username);
 
         }
 
