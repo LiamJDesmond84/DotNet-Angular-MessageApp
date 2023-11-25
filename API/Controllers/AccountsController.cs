@@ -1,6 +1,7 @@
 ﻿using API.Data;
 using API.Entities;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Cryptography;
 
 namespace API.Controllers
 {
@@ -16,6 +17,7 @@ namespace API.Controllers
         [HttpPost("register")]
         public async Task<ActionResult<AppUser>> Register(string userName, string password)
         {
+            using var hmac = new HMACSHA512();
             var user = await _context.Users.Add(appUser);
 
         }
