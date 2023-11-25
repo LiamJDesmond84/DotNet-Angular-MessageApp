@@ -19,9 +19,7 @@ export class AppComponent implements OnInit {
       next: (data) => {
         this.users = data;
       },
-      error: (err) => {
-        console.log(err);
-      },
+      error: (err) => console.log(err),
       complete: () => console.log('Request completed')
     })
   }
