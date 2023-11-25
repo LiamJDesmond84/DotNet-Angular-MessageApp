@@ -12,9 +12,12 @@ export class AppComponent implements OnInit {
   users: any;
 
   constructor(private http: HttpClient) {}
-  
+
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    
+    this.http.get('https://localhost:5001/api/users').subscribe({
+      next: this.users = 
+    })
   }
 
 
