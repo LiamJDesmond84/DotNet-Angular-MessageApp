@@ -8,7 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
+  title: string = 'Message App';
+  users: any;
+
   constructor(private http: HttpClient) {}
 
-  title = 'Message App';
+
 }
