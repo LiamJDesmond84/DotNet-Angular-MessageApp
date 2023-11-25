@@ -22,15 +22,15 @@ namespace API.Controllers
         {
             if(await UserExists(registerDto.UserName))
             {
-                return BadRequest("User Already Exists");
+                return BadRequest("Username Is Taken");
             }
 
             using var hmac = new HMACSHA512();
             var user = new AppUser
             {
 
-                UserName = userName,
-                PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(password)),
+                UserName = registerDto.UserName.ToLower(),
+                PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(registerDto.Password)),
                 PasswordSalt = hmac.Key
             };
 
@@ -44,7 +44,7 @@ namespace API.Controllers
         private async Task<bool> UserExists(string username)
         {
 
-            return await _context.Users.AnyAsync(x => x.UserName == username);
+            return await _context.Users.AnyAsync(x => x.UserName == username.ToLower());
 
         }
 
