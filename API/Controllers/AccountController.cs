@@ -41,11 +41,10 @@ namespace API.Controllers
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
 
-            return new UserDto 
-             { 
-                Username = user.UserName,
-                Token = _tokenService.CreateToken(user)};
-             }
+            return new UserDto
+            { Username = user.UserName,
+              Token = _tokenService.CreateToken(user)};
+            }
 
         [HttpPost("Login")]
         public async Task<ActionResult<UserDto>> Login(LoginDto loginDto)
@@ -81,8 +80,6 @@ namespace API.Controllers
                 Token = _tokenService.CreateToken(user)
             };
         }
-
-    }
 
         private async Task<bool> UserExists(string username)
         {
