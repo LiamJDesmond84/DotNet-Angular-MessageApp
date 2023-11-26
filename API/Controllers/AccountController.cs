@@ -41,13 +41,18 @@ namespace API.Controllers
             return Ok(user);
         }
 
-        public async Task<AppUser> Login(LoginDto loginDto)
+        public async Task<ActionResult<AppUser>> Login(LoginDto loginDto)
         {
             // Find - good for when you know the Primary Key
             // FirstOrDefault - Get something back or NULL(default value for an object)
             // First - Get sometihng back or ERROR
             //var user = await _context.Users.FirstOrDefaultAsync(loginDto.Username); - if there's more than 1 element in the DB that matches our query - Throws exception?
             var user = await _context.Users.SingleOrDefaultAsync(x => x.UserName == loginDto.Username);
+
+            if(user == null)
+            {
+                return Unauthorized();
+            }
         }
 
         private async Task<bool> UserExists(string username)
