@@ -53,6 +53,10 @@ namespace API.Controllers
             {
                 return Unauthorized();
             }
+
+            using var hmac = new HMACSHA512(user.PasswordSalt);
+            var computedHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(loginDto.Password));
+
         }
 
         private async Task<bool> UserExists(string username)
