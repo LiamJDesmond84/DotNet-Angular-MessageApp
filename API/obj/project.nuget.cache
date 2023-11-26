@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "dS4pyUC5q3ZgVziof+S8cOlshz6hDwxUlBA4La4raTeHl49zUrI/Azgf4hBK0/Onq46vGHSI70frIh6jMaAu5g==",
+  "dgSpecHash": "hJAjNwy4gnyqQbTCe50S41V1ekF0jVcOTF6nrKaSrPpNW5dnqQNPSzG/vlqAEDliuUIo0hu1PAFRt3xL/4NIjw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\liamj\\Documents\\GitRepos\\DotNet-Angular-MessageApp\\API\\API.csproj",
+  "projectFilePath": "C:\\Users\\liamj\\Documents\\GitRepos\\DotNet-Angular-MessageApp\\api\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\liamj\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\liamj\\.nuget\\packages\\microsoft.data.sqlite.core\\7.0.14\\microsoft.data.sqlite.core.7.0.14.nupkg.sha512",
