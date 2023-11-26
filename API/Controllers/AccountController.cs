@@ -22,7 +22,7 @@ namespace API.Controllers
         }
 
         [HttpPost("register")]
-        public async Task<ActionResult<AppUser>> Register(RegisterDto registerDto)
+        public async Task<ActionResult<UserDto>> Register(RegisterDto registerDto)
         {
             if(await UserExists(registerDto.Username))
             {
@@ -41,11 +41,14 @@ namespace API.Controllers
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
 
-            return Ok(user);
-        }
+            return new UserDto 
+             { 
+                Username = user.UserName,
+                Token = _tokenService.CreateToken(user)};
+             }
 
         [HttpPost("Login")]
-        public async Task<ActionResult<AppUser>> Login(LoginDto loginDto)
+        public async Task<ActionResult<UserDto>> Login(LoginDto loginDto)
         {
             // Find - good for when you know the Primary Key
             // FirstOrDefault - Get something back or NULL(default value for an object)
@@ -72,9 +75,14 @@ namespace API.Controllers
                 }
             }
 
-            return user;
-
+            return new UserDto
+            {
+                Username = user.UserName,
+                Token = _tokenService.CreateToken(user)
+            };
         }
+
+    }
 
         private async Task<bool> UserExists(string username)
         {
