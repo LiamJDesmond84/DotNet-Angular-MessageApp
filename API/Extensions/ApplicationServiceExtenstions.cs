@@ -8,16 +8,30 @@ namespace API.Extensions
     public static class ApplicationServiceExtenstions
     {
 
-        public static void AddApplicationServices(this IServiceCollection services, IConfiguration config)
-        {
-            services.AddDbContext<DataContext>(options =>
+        //public static IServiceCollection AddApplicationServices(this IServiceCollection services, IConfiguration config)
+        //{
+        //    builder.Services.AddDbContext<DataContext>(options =>
+        //    {
+        //        options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
+        //    });
+
+        //    builder.Services.AddCors();
+
+        //    builder.Services.AddScoped<ITokenService, TokenService>();
+        //}
+
+
+            public static void AddApplicationServices(this IServiceCollection services, IConfiguration config)
             {
-                options.UseSqlite(config.GetConnectionString("DefaultConnection"));
-            });
+                services.AddDbContext<DataContext>(options =>
+                {
+                    options.UseSqlite(config.GetConnectionString("DefaultConnection"));
+                });
 
-            services.AddCors();
+                services.AddCors();
 
-            services.AddScoped<ITokenService, TokenService>();
+                services.AddScoped<ITokenService, TokenService>();
+            }
         }
     }
 }
