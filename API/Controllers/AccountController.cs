@@ -42,7 +42,8 @@ namespace API.Controllers
 
         public async Task<AppUser> Login(LoginDto loginDto)
         {
-
+            //var user = await _context.Users.FirstOrDefaultAsync(loginDto.Username);
+            var user = await _context.Users.SingleOrDefaultAsync(x => x.UserName == loginDto.Username);
         }
 
         private async Task<bool> UserExists(string username)
