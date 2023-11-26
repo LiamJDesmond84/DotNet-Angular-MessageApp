@@ -3,6 +3,7 @@ using API.DTOs;
 using API.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure.Internal;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -42,7 +43,10 @@ namespace API.Controllers
 
         public async Task<AppUser> Login(LoginDto loginDto)
         {
-            //var user = await _context.Users.FirstOrDefaultAsync(loginDto.Username);
+            // Find - good for when you know the Primary Key
+            // FirstOrDefault - Get something back or NULL(default value for an object)
+            // First - Get sometihng back or ERROR
+            //var user = await _context.Users.FirstOrDefaultAsync(loginDto.Username); - if there's more than 1 element in the DB that matches our query - Throws exception?
             var user = await _context.Users.SingleOrDefaultAsync(x => x.UserName == loginDto.Username);
         }
 
