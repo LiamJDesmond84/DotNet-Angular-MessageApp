@@ -52,7 +52,7 @@ namespace API.Controllers
             // Checking if User Exists
             if(user == null)
             {
-                return Unauthorized();
+                return Unauthorized("Invalid Username");
             }
 
 
@@ -64,11 +64,11 @@ namespace API.Controllers
             {
                 if (computedHash[i] != user.PasswordHash[i])
                 {
-                    return Unauthorized();
+                    return Unauthorized("Invalid Password");
                 }
             }
 
-
+            return user;
 
         }
 
