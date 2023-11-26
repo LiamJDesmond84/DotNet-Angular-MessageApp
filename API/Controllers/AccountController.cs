@@ -38,14 +38,16 @@ namespace API.Controllers
             await _context.SaveChangesAsync();
 
             return Ok(user);
+        }
+
+        public async Task<AppUser> Login(LoginDto loginDto)
+        {
 
         }
 
         private async Task<bool> UserExists(string username)
         {
-
             return await _context.Users.AnyAsync(x => x.UserName == username.ToLower());
-
         }
 
     }
