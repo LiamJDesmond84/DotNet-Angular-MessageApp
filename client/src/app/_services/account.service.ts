@@ -6,19 +6,19 @@ import { Injectable } from '@angular/core';
 })
 export class AccountService {
 
+  baseUrl: string = "https://localhost:5001/api/";
+
   constructor(private http: HttpClient) { }
 
 
   login(model: any) {
-    this.http.post("https://localhost:5001/api/account/login", model)
+    this.http.post(this.baseUrl + "account/login", model)
       .subscribe({
         next: () => {
           console.log("Login");
-          
         },
         error: (err) => console.log(err),
-
-        
+        complete: () => console.log("Complete")
         
       })
   }
