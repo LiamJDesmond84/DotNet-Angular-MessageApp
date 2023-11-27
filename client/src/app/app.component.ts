@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     
-    this.http.get('https://localhost:5001/api/users').subscribe({
+    this.http.get<any>('https://localhost:5001/api/users').subscribe({
       next: (data) => {
         this.users = data;
       },

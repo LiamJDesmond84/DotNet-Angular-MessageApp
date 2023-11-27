@@ -12,15 +12,8 @@ export class AccountService {
 
 
   login(model: any) {
-    this.http.post(this.baseUrl + "account/login", model)
-      .subscribe({
-        next: () => {
-          console.log("Login");
-        },
-        error: (err) => console.log(err),
-        complete: () => console.log("Complete")
-        
-      })
+    return this.http.post<any>(this.baseUrl + "account/login", model);
+
   }
 
 }
