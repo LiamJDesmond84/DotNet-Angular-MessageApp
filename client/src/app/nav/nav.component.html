@@ -14,6 +14,14 @@
           </li>
         </ul>
 
+        <div class="dropdown">
+          <a class="dropdown-toggle text-light">Welcome User</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item">Edit Profile</a>
+            <a class="dropdown-item" (click)="logout()">Login Profile</a>
+          </div>
+        </div>
+
         <form #loginForm="ngForm" class="d-flex" (ngSubmit)="login()" autocomplete="off">
           <input class="form-control me-2" type="text" placeholder="Username" name="username" [(ngModel)]="model.username">
           <input class="form-control me-2" type="password" placeholder="Password" name="password" [(ngModel)]="model.password">
