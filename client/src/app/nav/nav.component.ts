@@ -9,20 +9,19 @@ import { AccountService } from '../_services/account.service';
 export class NavComponent implements OnInit {
 
   model: any = {};
+  loggedIn: boolean = false;
 
   constructor(private accountService: AccountService ) {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
 
-  }
-
-  login(model: any)  {
+  login()  {
     console.log(this.model);
-    
-    this.accountService.login(model)
-    .subscribe({
-      next: () => {
-        console.log("Login");
+
+    this.accountService.login(this.model).subscribe({
+      next: (response) => {
+        console.log(response);
+        this.loggedIn = true;
       },
       error: (err) => console.log(err),
       complete: () => console.log("Complete")

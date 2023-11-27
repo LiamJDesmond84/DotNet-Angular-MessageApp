@@ -13,7 +13,6 @@ export class AccountService {
 
   login(model: any) {
     return this.http.post<any>(this.baseUrl + "account/login", model);
-
   }
 
 }
