@@ -19,6 +19,10 @@ export class AccountService {
 
         if(user) {
           localStorage.setItem('user', JSON.stringify(user));
+          console.log("USER: " + user);
+          
+          console.log(JSON.stringify("USER STRINGIFIED: " + user));
+          
         }
       })
     );
