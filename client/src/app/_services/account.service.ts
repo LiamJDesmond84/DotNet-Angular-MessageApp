@@ -13,17 +13,16 @@ export class AccountService {
 
 
   login(model: any) {
-    return this.http.post<any>(this.baseUrl + "account/login", model).pipe(
-      map((response: any) => {
-        var user = response;
+    return this.http.post<any>(this.baseUrl + "account/login", model)
+      .pipe(map((response: any) => {
+          var user = response;
 
-        if(user) {
-          localStorage.setItem('user', JSON.stringify(user));
-          console.log("USER: " + user);
-          
-          console.log(JSON.stringify("USER STRINGIFIED: " + user));
-          
-        }
+          if(user) {
+            localStorage.setItem('user', JSON.stringify(user));
+            console.log("USER: " + user);
+            
+            console.log(JSON.stringify("USER STRINGIFIED: " + user));
+          }
       })
     );
   }
