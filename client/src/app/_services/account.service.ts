@@ -22,16 +22,23 @@ export class AccountService {
 
           if(user) {
             localStorage.setItem('user', JSON.stringify(user));
+            this.currentUserSource.next(user);
+
             console.log("USER: " + user);
-            
             console.log(JSON.stringify("USER STRINGIFIED: " + user));
           }
       })
     );
   }
 
+  // To be used inside a component to set this inside AccountService.
+  setCurrentUser(user: User){
+    this.currentUserSource.next(user);
+  }
+
   logout() {
     localStorage.removeItem('user');
+    this.currentUserSource.next(null);
   }
 
 }
