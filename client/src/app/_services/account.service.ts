@@ -12,7 +12,16 @@ export class AccountService {
 
 
   login(model: any) {
-    return this.http.post<any>(this.baseUrl + "account/login", model);
+    return this.http.post<any>(this.baseUrl + "account/login", model).pipe(
+      map((response: any) => {
+        var user = response;
+        localStorage.setItem('user', JSON.stringify(user));
+      })
+    );
+  }
+
+  logout() {
+    localStorage.removeItem('user');
   }
 
 }
