@@ -15,6 +15,12 @@ export class NavComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  getCurrentUser(){
+    this.accountService.currentUser$.subscribe({
+      next: user => this.loggedIn = !!user,
+    })
+  }
+
   login()  {
     console.log(this.model);
 
@@ -30,6 +36,9 @@ export class NavComponent implements OnInit {
   }
 
   logout() {
+    // removes user item from localStorage.
+    this.accountService.logout();
+
     this.loggedIn = false;
   }
 
