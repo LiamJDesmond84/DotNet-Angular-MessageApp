@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AccountService } from '../_services/account.service';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { User } from '../_models/user';
 
 @Component({
@@ -11,7 +11,7 @@ import { User } from '../_models/user';
 export class NavComponent implements OnInit {
 
   model: any = {};
-  currentUser$: Observable<User>;
+  currentUser$: Observable<User | null> = of(null);
 
   constructor(private accountService: AccountService ) {}
 
