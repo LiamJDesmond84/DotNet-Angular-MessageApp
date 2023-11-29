@@ -16,17 +16,18 @@ export class NavComponent implements OnInit {
   constructor(private accountService: AccountService ) {}
 
   ngOnInit(): void {
+    // Using currentUser$ observable instead of boolean loggedIn.
     this.currentUser$ = this.accountService.currentUser$;
   }
 
-  getCurrentUser(){
-    this.accountService.currentUser$.subscribe({
-      // !! turns user into boolean - if we have a user: true, if we don't have a user: false.
-      next: user => this.loggedIn = !!user,
-      error: err => console.log(err)
+  // getCurrentUser(){
+  //   this.accountService.currentUser$.subscribe({
+  //     // !! turns user into boolean - if we have a user: true, if we don't have a user: false.
+  //     next: user => this.loggedIn = !!user,
+  //     error: err => console.log(err)
       
-    })
-  }
+  //   })
+  // }
 
   login()  {
     console.log(this.model);
@@ -34,7 +35,7 @@ export class NavComponent implements OnInit {
     this.accountService.login(this.model).subscribe({
       next: (response) => {
         console.log(response);
-        this.loggedIn = true;
+
       },
       error: err => console.log(err),
       complete: () => console.log("Login Complete")
@@ -46,7 +47,7 @@ export class NavComponent implements OnInit {
     // removes user item from localStorage.
     this.accountService.logout();
 
-    this.loggedIn = false;
+
   }
 
 }
