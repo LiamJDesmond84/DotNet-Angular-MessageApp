@@ -10,6 +10,8 @@ export class AccountService {
 
   baseUrl: string = "https://localhost:5001/api/";
   private currentUserSource = new BehaviorSubject<User | null>(null);
+
+  //! For use in other components?
   currentUser$ = this.currentUserSource.asObservable();
 
   constructor(private http: HttpClient) { }
