@@ -11,27 +11,17 @@ import { User } from './_models/user';
 export class AppComponent implements OnInit {
 
   title: string = 'Message App';
-  users: any;
+
 
   constructor(private http: HttpClient, private accountService: AccountService) {}
 
   ngOnInit(): void {
     
-    this.getUsers();
+
     this.setCurrentUser();
   }
 
-  getUsers() {
 
-    this.http.get<any>('https://localhost:5001/api/users').subscribe({
-      next: (data) => {
-        this.users = data;
-      },
-      error: (err) => console.log(err),
-      complete: () => console.log('Get Users Complete')
-    })
-
-  }
 
   setCurrentUser(){
 
@@ -44,9 +34,6 @@ export class AppComponent implements OnInit {
       this.accountService.setCurrentUser(user);
 
     }
-
-
   }
-
-
+  
 }
