@@ -1,9 +1,9 @@
-<div class="container mt-5">
+<div *ngIf="registerMode" class="container mt-5">
     <div style="text-align: center;">
         <h1>Find your match</h1>
         <p class="lead">Check 'em out...</p>
         <div class="text-center">
-            <button class="btn btn-primary btn-lg me-2">Register</button>
+            <button class="btn btn-primary btn-lg me-2" (click)="registerToggle()">Register</button>
             <button class="btn btn-primary btn-lg">Learn more</button>
         </div>
     </div>

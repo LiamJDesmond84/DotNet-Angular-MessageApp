@@ -15,7 +15,7 @@ export class HomeComponent {
 
   }
 
-  registerToggler() {
+  registerToggle() {
     this.registerMode = !this.registerMode;
   }
 
