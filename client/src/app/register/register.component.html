@@ -3,8 +3,12 @@
         <h2 class="text-center text-primary">Sign Up</h2>
         <hr>
         <div class="mb-3">
-            <input type="text" name="username" class="form-controler" [(ngModel)]="model.username">
-            <input type="text" name="password" class="form-controler" [(ngModel)]="model.password">
+            <input type="text" name="username" class="form-controler" [(ngModel)]="model.username" placeholder="Username">
+            <input type="text" name="password" class="form-controler" [(ngModel)]="model.password" placeholder="Password">
         </div>
+        <div class="text-center">
+            <button class="btn btn-success me-2" type="submit">Register</button>
+            <button class="btn btn-default" type="button" (click)="cancel()">Cancel</button>
 
+        </div>
 </form>
