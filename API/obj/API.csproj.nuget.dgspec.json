@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\liamj\\Documents\\GitRepos\\DotNet-Angular-MessageApp\\api\\API.csproj": {}
+    "C:\\Users\\liamj\\Documents\\GitRepos\\DotNet-Angular-MessageApp\\API\\API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\liamj\\Documents\\GitRepos\\DotNet-Angular-MessageApp\\api\\API.csproj": {
+    "C:\\Users\\liamj\\Documents\\GitRepos\\DotNet-Angular-MessageApp\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\liamj\\Documents\\GitRepos\\DotNet-Angular-MessageApp\\api\\API.csproj",
+        "projectUniqueName": "C:\\Users\\liamj\\Documents\\GitRepos\\DotNet-Angular-MessageApp\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\Users\\liamj\\Documents\\GitRepos\\DotNet-Angular-MessageApp\\api\\API.csproj",
+        "projectPath": "C:\\Users\\liamj\\Documents\\GitRepos\\DotNet-Angular-MessageApp\\API\\API.csproj",
         "packagesPath": "C:\\Users\\liamj\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\liamj\\Documents\\GitRepos\\DotNet-Angular-MessageApp\\api\\obj\\",
+        "outputPath": "C:\\Users\\liamj\\Documents\\GitRepos\\DotNet-Angular-MessageApp\\API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\liamj\\AppData\\Roaming\\NuGet\\NuGet.Config",

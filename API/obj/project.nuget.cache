@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1pBSc3KsglRWZ2ezOEwETpH/Ov5GIetFm4FiL3iX217g+GWfDPLtouLSmhPz6VzUpUmK1DbiQttoyodp96lbzg==",
+  "dgSpecHash": "iJyXNgwTcYO2HF8fhzi0fwaa4slMBk2sLhJM3JdpBIbbMZEEwcCFbF34rmYlp7TO9ybmElgY2AS4HJLiDktlYQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\liamj\\Documents\\GitRepos\\DotNet-Angular-MessageApp\\api\\API.csproj",
+  "projectFilePath": "C:\\Users\\liamj\\Documents\\GitRepos\\DotNet-Angular-MessageApp\\API\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\liamj\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\liamj\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\7.0.14\\microsoft.aspnetcore.authentication.jwtbearer.7.0.14.nupkg.sha512",
