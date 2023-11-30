@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
   title: string = 'Message App';
 
 
-  constructor(private http: HttpClient, private accountService: AccountService) {}
+  constructor(private accountService: AccountService) {}
 
   ngOnInit(): void {
     
