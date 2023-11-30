@@ -7,4 +7,16 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
+  registerMode: boolean = false;
+
+  constructor() {}
+
+  ngOnInit(): void {
+
+  }
+
+  registerToggler() {
+    this.registerMode = !this.registerMode;
+  }
+
 }
