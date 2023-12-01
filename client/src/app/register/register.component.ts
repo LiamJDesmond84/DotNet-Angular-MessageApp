@@ -8,6 +8,9 @@ import { User } from '../_models/user';
 })
 export class RegisterComponent implements OnInit {
 
+  test: any;
+
+  //! Sends input from PARENT to CHILD(this)
   @Input() usersFromHomeComponent: any;
   // @Input() usersFromHomeComponent: Array<User> = [];
 

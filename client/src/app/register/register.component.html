@@ -15,7 +15,7 @@
         <div class="mb-3">
             <label>Users</label>
             <select class="form-select">
-                <option *ngFor="let user in usersFromHomeComponent"></option>
+                <option *ngFor="let user of usersFromHomeComponent">{{ user.userName }}</option>
             </select>
         </div>
 
