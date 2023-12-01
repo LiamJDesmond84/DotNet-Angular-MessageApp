@@ -33,6 +33,10 @@ export class AccountService {
     );
   }
 
+  register(model: User) {
+    return this.http.post<User>(this.baseUrl + "accoount/register", model)
+  }
+
   // To be used inside a component to set this inside AccountService.
   setCurrentUser(user: User){
     this.currentUserSource.next(user);
