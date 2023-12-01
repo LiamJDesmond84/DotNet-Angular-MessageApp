@@ -17,20 +17,16 @@ export class AccountService {
   constructor(private http: HttpClient) { }
 
 
-  login(model: any) {
+  login(model: User) {
     return this.http.post<User>(this.baseUrl + "account/login", model)
-      .pipe(map((response: User) => {
-          var user = response;
+    .pipe(map(user => {
 
-          if(user) {
-            localStorage.setItem('user', JSON.stringify(user));
-            this.currentUserSource.next(user);
-
-            console.log("USER: " + user);
-            console.log(JSON.stringify("USER STRINGIFIED: " + user));
-          }
-      })
-    );
+      if(user){
+        
+        localStorage.setItem('user', JSON.stringify(user));
+        this.currentUserSource.next(user);
+      }
+    }));
   }
 
   register(model: User) {
@@ -40,6 +36,7 @@ export class AccountService {
         if(user){
           
           localStorage.setItem('user', JSON.stringify(user));
+          this.currentUserSource.next(user);
         }
       }));
   }

@@ -12,12 +12,7 @@
 
         </div>
 
-        <div class="mb-3">
-            <label>Users</label>
-            <select class="form-select">
-                <option *ngFor="let user of usersFromHomeComponent">{{ user.userName }}</option>
-            </select>
-        </div>
+
 
      <ul class="list-group" *ngFor="let x of usersFromHomeComponent">
         <li class="list-group-item"> {{ x.id }} - {{ x.userName }} </li>
