@@ -32,6 +32,8 @@ export class RegisterComponent implements OnInit {
 
   cancel() {
     console.log("Canceled");
+    
+    //* registerToggle(registerMode variable) to FALSE
     this.cancelRegister.emit(false);
     
   }

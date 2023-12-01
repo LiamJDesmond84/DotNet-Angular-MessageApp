@@ -12,7 +12,8 @@
         <div class="row justify-content-center">
             <div class="col-4">
                 <!-- PARENT(HOME) to CHILD(REGISTER) - users inside HOME component | usersFromHomeComponent inside REGISTER component  -->
-                <app-register [usersFromHomeComponent]="users"></app-register>
+                <!-- [input] (output)-->
+                <app-register [usersFromHomeComponent]="users" (cancelRegister)="registerToggle()"></app-register>
             </div>
         </div>
     </div>
