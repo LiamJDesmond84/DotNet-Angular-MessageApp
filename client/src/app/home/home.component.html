@@ -11,13 +11,20 @@
     <div *ngIf="registerMode" class="containter">
         <div class="row justify-content-center">
             <div class="col-4">
-                <!-- PARENT(HOME) to CHILD(REGISTER) - users inside HOME component | usersFromHomeComponent inside REGISTER component  -->
-                <!-- [input] (output)-->
+
+                <!-- //* [input] (output) -->
+
 
                 <!-- Also works just calling registerToggle() directly -->
                 <!-- <app-register [usersFromHomeComponent]="users" (cancelRegister)="registerToggle()"></app-register> -->
+
+
+                <!-- PARENT(HOME) to CHILD(REGISTER) - users inside HOME component | usersFromHomeComponent inside REGISTER component  -->
                 <app-register [usersFromHomeComponent]="users" (cancelRegister)="cancelRegisterMode($event)"></app-register>
-                <!--  cancel() in register.ts -> HTML -> cancelRegistration() in home.ts -->
+                <!--  //! CHILD - REGISTER HTML -> (click) -> register.ts cancel() -> @Output() cancelRegister = EventEmitter -> HOME HTML -> (cancelRegister) -> home.ts -> cancelRegistration() -->
+                
+                <!-- //* $event object -->
+                <!-- //* @Output() cancelRegister = new EventEmitter(); -->
             </div>
         </div>
     </div>

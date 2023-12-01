@@ -34,7 +34,7 @@ export class HomeComponent implements OnInit {
     })
   }
 
-  //* cancel() in register.ts -> HTML -> cancelRegistration() in home.ts
+  //* CHILD - REGISTER HTML -> (click) -> register.ts cancel() -> @Output() cancelRegister = EventEmitter -> HOME HTML -> (cancelRegister) -> home.ts -> cancelRegistration()
   cancelRegisterMode(event: boolean){
     this.registerMode = event;
   }
