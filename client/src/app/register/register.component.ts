@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { User } from '../_models/user';
 
 @Component({
@@ -13,6 +13,9 @@ export class RegisterComponent implements OnInit {
   //! Sends input from PARENT to CHILD(this)
   @Input() usersFromHomeComponent: any;
   // @Input() usersFromHomeComponent: Array<User> = [];
+
+  //! Sends input from CHILD(this) to PARENT
+  @Output() cancelRegister = new EventEmitter();
 
   model: any = {}
 
