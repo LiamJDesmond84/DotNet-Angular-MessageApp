@@ -11,4 +11,8 @@
             <button class="btn btn-default" type="button" (click)="cancel()">Cancel</button>
 
         </div>
+
+     <ul class="list-group" *ngFor="let x of usersFromHomeComponent">
+        <li class="list-group-item"> {{ x.id }} - {{ x.userName }} </li>
+    </ul>
 </form>
