@@ -35,6 +35,13 @@ export class AccountService {
 
   register(model: User) {
     return this.http.post<User>(this.baseUrl + "accoount/register", model)
+      .pipe(map(user => {
+
+        if(user){
+          
+          localStorage.setItem('user', JSON.stringify(user));
+        }
+      }));
   }
 
   // To be used inside a component to set this inside AccountService.
