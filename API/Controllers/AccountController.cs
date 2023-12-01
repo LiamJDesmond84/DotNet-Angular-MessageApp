@@ -47,7 +47,7 @@ namespace API.Controllers
                  Token = _tokenService.CreateToken(user)};
             }
 
-        [HttpPost("Login")]
+        [HttpPost("login")]
         public async Task<ActionResult<UserDto>> Login(LoginDto loginDto)
         {
             // Find - good for when you know the Primary Key
