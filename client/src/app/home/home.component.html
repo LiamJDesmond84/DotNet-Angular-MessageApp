@@ -18,9 +18,13 @@
                 <!-- Also works just calling registerToggle() directly -->
                 <!-- <app-register [usersFromHomeComponent]="users" (cancelRegister)="registerToggle()"></app-register> -->
 
-
+                <!-- ################################################################################################### -->
                 <!-- PARENT(HOME) to CHILD(REGISTER) - users inside HOME component | usersFromHomeComponent inside REGISTER component  -->
-                <app-register  (cancelRegister)="cancelRegisterMode($event)"></app-register>
+
+                <!-- <app-register [usersFromHomeComponent]="users" (cancelRegister)="cancelRegisterMode($event)"></app-register> -->
+
+                <!-- ################################################################################################### -->
+
                 <!--  //! CHILD - REGISTER HTML -> (click) -> register.ts cancel() -> @Output() cancelRegister = EventEmitter -> HOME HTML -> (cancelRegister) -> home.ts -> cancelRegistration() -->
                 
                 <!-- //* $event object -->
