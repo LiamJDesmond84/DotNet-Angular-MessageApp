@@ -1,12 +1,15 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using API.Data;
+using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
     public class BugController : BaseApiController
     {
-        public IActionResult Index()
+        private readonly DataContext _context;
+
+        public BugController(DataContext context)
         {
-            return View();
+            _context = context;
         }
     }
 }
