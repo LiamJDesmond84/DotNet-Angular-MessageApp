@@ -52,9 +52,9 @@ namespace API.Controllers
 
                 return thingToReturn;
             }
-            catch
+            catch(Exception ex) { }
             {
-                return NotFound();
+                return StatusCode(500, "Computer says NO!");
             }
 
 
