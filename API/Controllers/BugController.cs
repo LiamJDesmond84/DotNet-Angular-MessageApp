@@ -1,5 +1,6 @@
 ﻿using API.Data;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Cryptography.X509Certificates;
 
 namespace API.Controllers
 {
@@ -11,5 +12,12 @@ namespace API.Controllers
         {
             _context = context;
         }
+
+
+        [HttpGet("auth")]
+        public ActionResult<String> getSecrets(){
+
+        }
+
     }
 }
