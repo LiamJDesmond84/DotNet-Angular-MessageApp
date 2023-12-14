@@ -40,11 +40,15 @@ namespace API.Controllers
             }
         }
 
-        [HttpGet("auth")]
-        public ActionResult<string> getSecrets()
+        [HttpGet("server-error")]
+        public ActionResult<string> getServerError()
         {
 
-            return "secret text";
+            var thing = _context.Users.Find(-1);
+
+            var thingToReturn = thing.ToString();
+
+            return thingToReturn;
         }
 
         [HttpGet("auth")]
