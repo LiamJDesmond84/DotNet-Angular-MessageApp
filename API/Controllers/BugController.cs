@@ -58,26 +58,6 @@ namespace API.Controllers
             return BadRequest("This was a bad request");
         }
 
-        [HttpGet("auth")]
-        public ActionResult<string> getSecrets()
-        {
-
-            return "secret text";
-        }
-
-        [HttpGet("auth")]
-        public ActionResult<string> getSecrets()
-        {
-
-            return "secret text";
-        }
-
-        [HttpGet("auth")]
-        public ActionResult<string> getSecrets()
-        {
-
-            return "secret text";
-        }
 
     }
 }
