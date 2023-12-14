@@ -51,11 +51,11 @@ namespace API.Controllers
             return thingToReturn;
         }
 
-        [HttpGet("auth")]
-        public ActionResult<string> getSecrets()
+        [HttpGet("bad-request")]
+        public ActionResult<string> getBadRequest()
         {
 
-            return "secret text";
+            return BadRequest("This was a bad request");
         }
 
         [HttpGet("auth")]
