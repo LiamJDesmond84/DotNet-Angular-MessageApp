@@ -44,11 +44,20 @@ namespace API.Controllers
         public ActionResult<string> getServerError()
         {
 
-            var thing = _context.Users.Find(-1);
+            try
+            {
+                var thing = _context.Users.Find(-1);
 
-            var thingToReturn = thing.ToString();
+                var thingToReturn = thing.ToString();
 
-            return thingToReturn;
+                return thingToReturn;
+            }
+            catch
+            {
+                return NotFound();
+            }
+
+
         }
 
         [HttpGet("bad-request")]
