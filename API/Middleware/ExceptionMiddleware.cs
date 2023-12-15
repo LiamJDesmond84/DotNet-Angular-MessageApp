@@ -1,4 +1,6 @@
-﻿namespace API.Middleware
+﻿using System.Net;
+
+namespace API.Middleware
 {
     public class ExceptionMiddleware
     {
@@ -20,9 +22,12 @@
                 await _next(context);
             }
             catch (Exception ex)
-                    {
+            {
                 _logger.LogError(ex, ex.Message);
-                    }
+                context.Response.ContentType = "application/json";
+                context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+
+                var response = _env.IsDevelopment();
             }
         }
     }
