@@ -12,5 +12,16 @@
             _logger = logger;
             _env = env;
         }
+
+        public async Task InvokeAsync(HttpContext context)
+        {
+            try
+            {
+                await _next(context);
+            }
+            catch {
+                (Exception ex) { }
+            }
+        }
     }
 }
