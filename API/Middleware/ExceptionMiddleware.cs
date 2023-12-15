@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using API.Errors;
+using System.Net;
 
 namespace API.Middleware
 {
@@ -27,7 +28,7 @@ namespace API.Middleware
                 context.Response.ContentType = "application/json";
                 context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
 
-                var response = _env.IsDevelopment();
+                var response = _env.IsDevelopment() ? new ApiException(context.Response.StatusCode, ex.Message, ex.StackTrace?.ToString() : null;
             }
         }
     }
