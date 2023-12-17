@@ -29,7 +29,17 @@ export class TestErrorComponent implements OnInit{
     this.http.get(this.baseURl + "bug/bad-request")
     .subscribe({
       next: response => console.log(response),
-      error: err => console.log(err);
+      error: err => console.log(err)
+    })
+  }
+
+  get500Error(){
+    this.http.get(this.baseURl + "bug/server-error")
+    .subscribe({
+      next: response => console.log(response),
+      error: err => console.log(err)
+      
+      
     })
   }
   
