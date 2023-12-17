@@ -18,10 +18,10 @@ export class TestErrorComponent implements OnInit{
   }
 
   get404(){
-
     this.http.get(this.baseURl + "bug/not-found")
       .subscribe({
-        next: response => console.log(response)
+        next: response => console.log(response),
+        error: err => console.log(err)
       })
   }
   
