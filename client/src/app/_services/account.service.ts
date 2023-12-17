@@ -17,7 +17,7 @@ export class AccountService {
   constructor(private http: HttpClient) { }
 
 
-  login(model: User) {
+  login(model: User){
     return this.http.post<User>(this.baseUrl + "account/login", model)
     .pipe(map(user => {
 

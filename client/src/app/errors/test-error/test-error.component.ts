@@ -17,7 +17,7 @@ export class TestErrorComponent implements OnInit{
 
   }
 
-  get404Error(){
+  get404Error() {
     this.http.get(this.baseURl + "bug/not-found")
       .subscribe({
         next: response => console.log(response),
@@ -25,7 +25,7 @@ export class TestErrorComponent implements OnInit{
       })
   }
 
-  get400Error(){
+  get400Error() {
     this.http.get(this.baseURl + "bug/bad-request")
     .subscribe({
       next: response => console.log(response),
@@ -33,13 +33,19 @@ export class TestErrorComponent implements OnInit{
     })
   }
 
-  get500Error(){
+  get500Error() {
     this.http.get(this.baseURl + "bug/server-error")
     .subscribe({
       next: response => console.log(response),
       error: err => console.log(err)
-      
-      
+    })
+  }
+
+  get401Error() {
+    this.http.get(this.baseURl + "bug/auth")
+    .subscribe({
+      next: response => console.log(response),
+      error: err => console.log(err)
     })
   }
   
