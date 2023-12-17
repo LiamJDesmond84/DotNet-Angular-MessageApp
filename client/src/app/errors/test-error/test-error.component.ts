@@ -17,12 +17,20 @@ export class TestErrorComponent implements OnInit{
 
   }
 
-  get404(){
+  get404Error(){
     this.http.get(this.baseURl + "bug/not-found")
       .subscribe({
         next: response => console.log(response),
         error: err => console.log(err)
       })
+  }
+
+  get400Error(){
+    this.http.get(this.baseURl + "bug/bad-request")
+    .subscribe({
+      next: response => console.log(response),
+      error: err => console.log(err);
+    })
   }
   
 }
