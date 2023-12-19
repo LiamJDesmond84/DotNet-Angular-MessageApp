@@ -28,6 +28,10 @@ export class ErrorInterceptor implements HttpInterceptor {
                     modelStateErrors.push(err.error.errors[key])
                   }
                 }
+                throw modelStateErrors;
+              }
+              else{
+                this.toastr.error(err.error, err.status)
               }
           }
         }
