@@ -31,8 +31,10 @@ export class ErrorInterceptor implements HttpInterceptor {
                 throw modelStateErrors;
               }
               else{
-                this.toastr.error(err.error, err.status)
+                this.toastr.error(err.error, err.status.toString())
               }
+            case 401:
+              this.toastr.error('Unauthorized', err.status.toString())
           }
         }
       })
