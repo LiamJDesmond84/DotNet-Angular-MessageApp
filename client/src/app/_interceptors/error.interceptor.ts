@@ -25,16 +25,21 @@ export class ErrorInterceptor implements HttpInterceptor {
                 const modelStateErrors = [];
                 for(const key in err.error.errors) {
                   if(err.error.errors[key]) {
-                    modelStateErrors.push(err.error.errors[key])
+                    modelStateErrors.push(err.error.errors[key]);
                   }
                 }
                 throw modelStateErrors;
               }
               else{
-                this.toastr.error(err.error, err.status.toString())
+                this.toastr.error(err.error, err.status.toString());
               }
             case 401:
-              this.toastr.error('Unauthorized', err.status.toString())
+              this.toastr.error('Unauthorized', err.status.toString());
+              break;
+            case 404:
+              this.router.navigateByUrl('/not-found');
+              break;
+            case 500:
           }
         }
       })
