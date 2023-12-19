@@ -33,6 +33,7 @@ export class ErrorInterceptor implements HttpInterceptor {
               else{
                 this.toastr.error(err.error, err.status.toString());
               }
+              break;
             case 401:
               this.toastr.error('Unauthorized', err.status.toString());
               break;
@@ -41,8 +42,16 @@ export class ErrorInterceptor implements HttpInterceptor {
               break;
             case 500:
               const navigationExtras: NavigationExtras = {state: {err: err.error}};
+              this.router.navigateByUrl('/server-error', navigationExtras);
+              break;
+            default:
+              this.toastr.error('Something unexpected went wrong');
+              console.log(err);
+              break;
+              
           }
         }
+        throw err;
       })
     )
   }
